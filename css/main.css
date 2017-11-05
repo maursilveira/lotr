@@ -1,0 +1,768 @@
+/*SCSS document*/
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* End Reset */
+@font-face {
+  font-family: 'Cormorant SC';
+  src: url("../fonts/CormorantSC-Light.woff2") format("woff2"), url("../fonts/CormorantSC-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: 'Cormorant SC';
+  src: url("../fonts/CormorantSC-Bold.woff2") format("woff2"), url("../fonts/CormorantSC-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Cormorant SC';
+  src: url("../fonts/CormorantSC-Medium.woff2") format("woff2"), url("../fonts/CormorantSC-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Cormorant SC';
+  src: url("../fonts/CormorantSC-Regular.woff2") format("woff2"), url("../fonts/CormorantSC-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Cormorant SC Semi';
+  src: url("../fonts/CormorantSC-Semi.woff2") format("woff2"), url("../fonts/CormorantSC-Semi.woff") format("woff");
+  font-weight: 600;
+  font-style: normal; }
+@font-face {
+  font-family: 'Philosopher';
+  src: url("../fonts/Philosopher.woff2") format("woff2"), url("../fonts/Philosopher.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway.woff2") format("woff2"), url("../fonts/Raleway.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-Medium.woff2") format("woff2"), url("../fonts/Raleway-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Homenaje';
+  src: url("../fonts/Homenaje-Regular.woff2") format("woff2"), url("../fonts/Homenaje-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+.hidden {
+  display: none; }
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+body {
+  background-color: #000000;
+  font-family: "Raleway", Helvetica, Arial, sans-serif; }
+
+#container, #indexContainer {
+  width: 100%;
+  min-width: 320px;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative; }
+
+#indexContainer {
+  overflow: visible; }
+
+.photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; }
+
+.photo img {
+  width: 100%; }
+
+#skipIntro {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  z-index: 10;
+  outline: 0; }
+
+#ring #mainLogo {
+  width: 80%;
+  max-width: 800px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  vertical-align: middle;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+#ring #newlineLogo {
+  width: 15%;
+  max-width: 190px;
+  position: absolute;
+  top: 1.875rem;
+  left: 1.25rem; }
+#ring #wingnutLogo {
+  width: 8%;
+  max-width: 95px;
+  position: absolute;
+  top: 1.875rem;
+  right: 1.25rem; }
+#ring .indexFont, #ring #topTitle, #ring #enterBtn {
+  position: absolute;
+  font-family: "Cormorant SC", Times, serif;
+  font-weight: 600;
+  color: #b58137;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+#ring #topTitle {
+  display: inline;
+  font-size: 1rem;
+  top: 4%;
+  left: 50%;
+  text-align: center;
+  white-space: nowrap; }
+#ring #enterBtn {
+  display: block;
+  top: 80%;
+  left: 50%;
+  font-size: 1.4rem;
+  border: 2px solid #b58137;
+  padding: 0.75rem 1.25rem;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+#mainHeader {
+  position: fixed;
+  width: inherit;
+  max-width: inherit;
+  height: 4.375rem;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 10; }
+  #mainHeader #headerLogo img {
+    max-width: 10.625rem;
+    padding: 0.6rem 0; }
+  #mainHeader #navigation {
+    margin-top: 1.4rem; }
+    #mainHeader #navigation #hamburgerMenu button {
+      width: 32px;
+      height: 20px;
+      outline: 0; }
+    #mainHeader #navigation #hamburgerMenu button::after {
+      height: 0;
+      width: 30px;
+      -webkit-box-shadow: 0 2px 0 1.6px #b58137, 0 10px 0 1.6px #b58137, 0 18px 0 1.6px #b58137;
+      -moz-box-shadow: 0 2px 0 1.6px #b58137, 0 10px 0 1.6px #b58137, 0 18px 0 1.6px #b58137;
+      -o-box-shadow: 0 2px 0 1.6px #b58137, 0 10px 0 1.6px #b58137, 0 18px 0 1.6px #b58137;
+      -ms-box-shadow: 0 2px 0 1.6px #b58137, 0 10px 0 1.6px #b58137, 0 18px 0 1.6px #b58137;
+      box-shadow: 0 2px 0 1.6px #b58137, 0 10px 0 1.6px #b58137, 0 18px 0 1.6px #b58137; }
+    #mainHeader #navigation #mainNav {
+      position: absolute;
+      top: 3.5rem;
+      right: -8rem;
+      opacity: 0; }
+      #mainHeader #navigation #mainNav ul li {
+        display: block;
+        text-align: right; }
+        #mainHeader #navigation #mainNav ul li a {
+          font-family: "Philosopher", Helvetica, Arial, sans-serif;
+          color: #b58137;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          line-height: 0.8rem;
+          outline: 0; }
+
+.title, #movie .movieTitle, #videos #videosTitle, #videos .videoTitle, #photos #photosTitle, #register #registerTitle {
+  font-family: "Philosopher", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 2rem 0; }
+
+#mainBanner {
+  background-color: #ffffff;
+  position: relative; }
+  #mainBanner .bannerBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; }
+  #mainBanner #mainLogo {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    z-index: 3;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 80%;
+    max-width: 800px;
+    opacity: 0; }
+  #mainBanner #bannerContent {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    max-width: 1600px;
+    height: 50%;
+    text-align: center;
+    opacity: 0; }
+    #mainBanner #bannerContent #content {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+      #mainBanner #bannerContent #content #dvdCover {
+        width: 31.25%;
+        max-width: 260px; }
+      #mainBanner #bannerContent #content #editionText,
+      #mainBanner #bannerContent #content #subText {
+        font-family: "Cormorant SC", Times, serif;
+        font-weight: bold;
+        font-size: 1.25rem;
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem; }
+        #mainBanner #bannerContent #content #editionText span,
+        #mainBanner #bannerContent #content #subText span {
+          font-size: 0.875rem; }
+
+#movie {
+  background-color: #ffffff;
+  padding: 4rem 0; }
+  #movie .mainFont, #movie #movieDesc, #movie .charRow .character .charDesc, #movie .charRow .character .charMore, #movie #moreChars {
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: #000000; }
+  #movie #movieDesc .movietext {
+    margin-bottom: 1rem; }
+  #movie #charRow2,
+  #movie #charRow3,
+  #movie #charRow4 {
+    display: none; }
+  #movie .charRow {
+    text-align: center; }
+    #movie .charRow img {
+      width: 60%;
+      max-width: 220px; }
+    #movie .charRow .character {
+      float: none; }
+      #movie .charRow .character .charName {
+        font-family: "Philosopher", Helvetica, Arial, sans-serif;
+        font-size: 1.1rem;
+        margin: 0.6rem 0 1rem 0; }
+      #movie .charRow .character .charDesc {
+        text-align: left; }
+      #movie .charRow .character .charMore {
+        display: block;
+        text-align: left;
+        text-decoration: underline;
+        margin: 0.4rem 0 1.4rem 0; }
+  #movie #moreChars {
+    margin: 2rem 0;
+    border-bottom: 1px solid #000000;
+    outline: 0; }
+
+#videos {
+  color: #ffffff;
+  background-color: #000000;
+  text-align: center;
+  padding: 3.5rem 0; }
+  #videos .videoTitle {
+    font-size: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 0.8rem; }
+  #videos .videoWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    overflow: hidden; }
+    #videos .videoWrapper .overVideo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      width: inherit;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      z-index: 5;
+      cursor: pointer; }
+      #videos .videoWrapper .overVideo .videoBtn {
+        position: absolute;
+        width: 25%;
+        max-width: 16rem;
+        top: 45%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+    #videos .videoWrapper #teaser,
+    #videos .videoWrapper #trailer {
+      width: inherit; }
+    #videos .videoWrapper .controls {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      width: inherit;
+      background-color: rgba(70, 70, 70, 0.5);
+      align-items: center;
+      z-index: 7; }
+      #videos .videoWrapper .controls .buttonWrapper {
+        width: 100%;
+        overflow: visible; }
+        #videos .videoWrapper .controls .buttonWrapper .playBtn,
+        #videos .videoWrapper .controls .buttonWrapper .volumeBtn,
+        #videos .videoWrapper .controls .buttonWrapper .fullBtn {
+          width: 35px;
+          float: left;
+          cursor: pointer;
+          outline: 0;
+          margin-left: 0.4rem; }
+        #videos .videoWrapper .controls .buttonWrapper .fullBtn {
+          float: right;
+          margin-right: 0.4rem; }
+        #videos .videoWrapper .controls .buttonWrapper .seekBar,
+        #videos .videoWrapper .controls .buttonWrapper .volumeBar {
+          float: left;
+          width: 3rem;
+          cursor: pointer;
+          margin-left: 0.4rem;
+          margin-right: 1rem;
+          margin-top: 0.7rem; }
+        #videos .videoWrapper .controls .buttonWrapper .volumeBar {
+          opacity: 0;
+          cursor: default; }
+
+#photos {
+  color: #000000;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 3.5rem 0; }
+  #photos #galleryWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    overflow: hidden; }
+    #photos #galleryWrapper #galleryLeft,
+    #photos #galleryWrapper #galleryRight {
+      position: absolute;
+      width: 1.5rem;
+      top: 40%;
+      opacity: 0;
+      background-color: rgba(70, 70, 70, 0.5);
+      cursor: pointer;
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%); }
+      #photos #galleryWrapper #galleryLeft img,
+      #photos #galleryWrapper #galleryRight img {
+        padding: 0.5rem 0 0.4rem 0; }
+    #photos #galleryWrapper #galleryLeft {
+      left: 0; }
+    #photos #galleryWrapper #galleryRight {
+      right: 0; }
+    #photos #galleryWrapper .galleryPhoto {
+      width: inherit;
+      position: absolute;
+      top: 0;
+      left: 1366px;
+      opacity: 1;
+      padding-bottom: 1rem; }
+      #photos #galleryWrapper .galleryPhoto figure img {
+        width: inherit; }
+      #photos #galleryWrapper .galleryPhoto figure figcaption {
+        margin-top: 0.2rem;
+        font-weight: 500; }
+    #photos #galleryWrapper .galleryPhoto:first-of-type {
+      position: relative;
+      left: 0;
+      opacity: 1; }
+  #photos #thumbWrapper {
+    display: none;
+    margin: 2rem 2rem 0 2rem; }
+    #photos #thumbWrapper .galleryThumb {
+      cursor: pointer;
+      margin-bottom: 0.5rem; }
+      #photos #thumbWrapper .galleryThumb img {
+        border-radius: 4px; }
+
+#register {
+  background-color: #ffffff;
+  position: relative;
+  padding: 3.5rem 0 4rem 0;
+  z-index: 1; }
+  #register #registerTitle {
+    margin-bottom: 3rem; }
+  #register .contactWrapper {
+    width: inherit;
+    margin-top: 3rem;
+    padding: 0; }
+  #register .contactWrapper #contactForm {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 auto; }
+  #register .contactWrapper #contactForm .contactInfo {
+    height: 2.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+    padding-left: 0.75rem;
+    outline: 0; }
+  #register .contactWrapper #contactForm .contactInfo:active {
+    border: 1px solid #8e3b90; }
+  #register .contactWrapper #contactForm #contactSelect {
+    font-family: inherit;
+    font-size: 1rem; }
+  #register .contactWrapper #contactForm .contactText,
+  #register .contactWrapper #contactForm .checkBox {
+    margin-left: 1rem; }
+  #register .contactWrapper #contactForm .contactText {
+    margin-bottom: 1rem; }
+  #register .contactWrapper #submitWrapper {
+    text-align: center;
+    height: 2.5rem;
+    margin-top: 1rem; }
+  #register .contactWrapper #submitWrapper #submitButton {
+    display: inline-block;
+    height: 2.5rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    background-color: #b58137;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 0.25rem 1.25rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out; }
+  #register .contactWrapper #submitWrapper #submitButton span {
+    font-size: 1rem;
+    color: #ffffff;
+    transition: all 0.8s; }
+  #register .contactWrapper #submitWrapper #submitButton:hover {
+    background-color: rgba(181, 129, 55, 0.8); }
+
+#register:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(../images/map_middleearth_small.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  opacity: 0.15; }
+
+#mainFooter {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 0; }
+  #mainFooter #contentWrapper #socialIcons {
+    margin-bottom: 2.5rem; }
+    #mainFooter #contentWrapper #socialIcons img {
+      width: 22%;
+      max-width: 80px; }
+  #mainFooter #contentWrapper #filmIcons {
+    text-align: center; }
+    #mainFooter #contentWrapper #filmIcons #newlineLogo {
+      width: 30%;
+      max-width: 150px; }
+    #mainFooter #contentWrapper #filmIcons #ratingLogos {
+      display: inline-block;
+      width: 20%;
+      max-width: 100px; }
+      #mainFooter #contentWrapper #filmIcons #ratingLogos img {
+        display: block; }
+  #mainFooter #contentWrapper #textWrapper #filmCredits {
+    display: none; }
+  #mainFooter #contentWrapper #textWrapper #copyright {
+    font-size: 0.7rem;
+    padding-top: 2rem; }
+
+@media screen and (min-width: 40rem) {
+  #ring #mainLogo {
+    width: 60%; }
+  #ring #topTitle {
+    top: 8%;
+    font-size: 1.2rem; }
+  #ring #enterBtn {
+    font-size: 1.6rem;
+    padding: 0.85rem 1.35rem; }
+
+  #mainHeader {
+    height: 6.25rem; }
+    #mainHeader #headerLogo img {
+      max-width: 15rem;
+      padding: 1rem 0; }
+    #mainHeader #navigation {
+      margin-top: 2.2rem; }
+      #mainHeader #navigation #hamburgerMenu button {
+        width: 36px; }
+      #mainHeader #navigation #hamburgerMenu button::after {
+        width: 34px; }
+      #mainHeader #navigation #mainNav {
+        top: 4.2rem; }
+        #mainHeader #navigation #mainNav ul li a {
+          font-size: 1.4rem; }
+
+  .title, #movie .movieTitle, #videos #videosTitle, #videos .videoTitle, #photos #photosTitle, #register #registerTitle {
+    font-size: 2rem; }
+
+  #mainBanner #mainLogo {
+    top: 12%; }
+  #mainBanner #bannerContent {
+    height: 45%; }
+    #mainBanner #bannerContent #content #dvdCover {
+      width: 28%;
+      float: left;
+      margin-left: 6.25%; }
+    #mainBanner #bannerContent #content #editionText,
+    #mainBanner #bannerContent #content #subText {
+      font-size: 1.5rem;
+      float: right;
+      clear: right;
+      margin-right: 6.25%;
+      margin-top: 3rem; }
+      #mainBanner #bannerContent #content #editionText span,
+      #mainBanner #bannerContent #content #subText span {
+        font-size: 1rem; }
+
+  #movie {
+    padding: 5.5rem; }
+    #movie #charRow2 {
+      display: block; }
+    #movie .charRow .character {
+      float: left; }
+
+  #videos {
+    padding: 5rem 0; }
+    #videos .videoTitle {
+      font-size: 1.4rem; }
+    #videos .videoWrapper {
+      width: 100%; }
+      #videos .videoWrapper .controls .buttonWrapper .playBtn,
+      #videos .videoWrapper .controls .buttonWrapper .volumeBtn,
+      #videos .videoWrapper .controls .buttonWrapper .fullBtn {
+        width: 40px; }
+      #videos .videoWrapper .controls .buttonWrapper .seekBar,
+      #videos .videoWrapper .controls .buttonWrapper .volumeBar {
+        width: 4.2rem; }
+
+  #photos {
+    padding-top: 5rem; }
+    #photos #galleryWrapper #galleryLeft,
+    #photos #galleryWrapper #galleryRight {
+      width: 2.5rem; }
+    #photos #thumbWrapper {
+      display: block; }
+      #photos #thumbWrapper .grid-item {
+        width: 33.33%; }
+
+  #register {
+    padding: 5rem; }
+
+  #register:before {
+    background-image: url(../images/map_middleearth_medium.jpg); }
+
+  #mainFooter {
+    padding: 3rem 0 3rem 0; }
+    #mainFooter #contentWrapper {
+      position: relative; }
+      #mainFooter #contentWrapper #socialIcons {
+        float: right;
+        margin: 0;
+        width: 22%;
+        max-width: 80px; }
+        #mainFooter #contentWrapper #socialIcons img {
+          display: block;
+          float: right;
+          width: 100%;
+          max-width: inherit; }
+      #mainFooter #contentWrapper #filmIcons {
+        text-align: center;
+        -webkit-transform: translate(0, 50%);
+        -moz-transform: translate(0, 50%);
+        -o-transform: translate(0, 50%);
+        -ms-transform: translate(0, 50%);
+        transform: translate(0, 50%); }
+        #mainFooter #contentWrapper #filmIcons #newlineLogo {
+          width: 70%;
+          max-width: 80px;
+          display: block;
+          margin-bottom: 0.8rem; }
+        #mainFooter #contentWrapper #filmIcons #ratingLogos {
+          display: block;
+          width: 50%;
+          max-width: 60px;
+          margin-left: 0.7rem; }
+      #mainFooter #contentWrapper #textWrapper {
+        float: none; }
+        #mainFooter #contentWrapper #textWrapper #filmCredits {
+          display: block;
+          font-family: "Homenaje", Helvetica, Arial, sans-serif;
+          font-size: 0.8rem;
+          text-transform: uppercase; }
+          #mainFooter #contentWrapper #textWrapper #filmCredits .subText {
+            font-size: 0.4rem; }
+          #mainFooter #contentWrapper #textWrapper #filmCredits .space {
+            word-spacing: 0.15rem; }
+        #mainFooter #contentWrapper #textWrapper #copyright {
+          padding-top: 5rem; } }
+@media screen and (min-width: 64rem) {
+  #ring #mainLogo {
+    top: 30%; }
+  #ring #topTitle {
+    font-size: 1.8rem; }
+  #ring #enterBtn {
+    top: 60%;
+    font-size: 2.2rem;
+    padding: 1rem 1.6rem; }
+
+  #mainHeader #navigation #hamburgerMenu {
+    display: none; }
+  #mainHeader #navigation #mainNav {
+    top: 1.8rem;
+    right: 0.1rem;
+    opacity: 1; }
+    #mainHeader #navigation #mainNav ul li {
+      display: inline-block; }
+      #mainHeader #navigation #mainNav ul li a {
+        font-size: 1.5rem; }
+
+  #mainBanner #mainLogo {
+    width: 50%;
+    top: 40%;
+    left: 70%; }
+  #mainBanner #bannerContent {
+    width: 40%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+    #mainBanner #bannerContent #content #dvdCover {
+      float: none;
+      width: 40%;
+      margin-left: 0; }
+    #mainBanner #bannerContent #content #editionText,
+    #mainBanner #bannerContent #content #subText {
+      float: none;
+      margin-right: 0; }
+    #mainBanner #bannerContent #content #editionText {
+      margin-top: 5rem;
+      margin-bottom: 2rem; }
+    #mainBanner #bannerContent #content #subText {
+      margin-top: 1rem;
+      line-height: 2rem; }
+
+  #videos .videoWrapper {
+    width: 90%; }
+
+  #photos #galleryWrapper {
+    width: 80%; }
+    #photos #galleryWrapper .galleryPhoto {
+      width: 100%; }
+  #photos #thumbWrapper .grid-item {
+    width: 25%; }
+
+  #register:before {
+    background-image: url(../images/map_middleearth_large.jpg); } }
+@media screen and (min-width: 90rem) {
+  #ring #topTitle {
+    font-size: 2.2rem; }
+  #ring #enterBtn {
+    font-size: 2.8rem;
+    padding: 1.2rem 1.8rem; }
+
+  #mainBanner #bannerContent {
+    width: 35%; }
+    #mainBanner #bannerContent #content #editionText,
+    #mainBanner #bannerContent #content #subText {
+      font-size: 1.75rem; }
+      #mainBanner #bannerContent #content #editionText span,
+      #mainBanner #bannerContent #content #subText span {
+        font-size: 1.25rem; } }
+
+/*# sourceMappingURL=main.css.map */
